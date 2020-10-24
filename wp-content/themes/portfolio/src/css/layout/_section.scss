@@ -1,0 +1,16 @@
+.section-wrapper {
+  padding: 6rem 0;
+}
+
+.section {
+  max-width: 1170px;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 1199.98px) {
+    max-width: 90vw;
+  }
+
+  &__heading {
+    margin-bottom: 2em;
+  }
+}

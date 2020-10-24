@@ -1,0 +1,23 @@
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  margin-top: 0.5em;
+  border-radius: 5px;
+  border: none;
+  color: var(--text-color);
+  background-color: var(--bg-depth-1);
+  transition: 250ms all ease;
+}
+
+textarea {
+  height: 140px;
+}
+
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}

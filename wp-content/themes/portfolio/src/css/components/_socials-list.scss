@@ -1,0 +1,17 @@
+.socials-wrapper {
+  display: flex;
+}
+
+.social {
+  display: block;
+  margin-right: 1rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__logo {
+    height: 2.8rem;
+    padding: 0.6rem;
+  }
+}

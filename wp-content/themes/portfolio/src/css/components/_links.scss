@@ -1,0 +1,44 @@
+a {
+  color: inherit;
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 1em 1em 0;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.2em 1em;
+  border-radius: 5px;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    background-color: var(--primary-color-hover);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--small {
+    padding: 0.1em 0.8em;
+  }
+}
+
+.tag-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & > * {
+    margin: 0 1em 1em 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

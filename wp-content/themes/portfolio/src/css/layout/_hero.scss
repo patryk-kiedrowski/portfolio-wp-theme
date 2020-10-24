@@ -1,0 +1,142 @@
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @media only screen and (max-width: 1199.98px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__texts {
+    width: 45%;
+
+    @media only screen and (max-width: 1199.98px) {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 45%;
+
+    @media only screen and (max-width: 1199.98px) {
+      width: 100%;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 0.5em;
+  }
+
+  &__text {
+    margin-bottom: 2em;
+  }
+
+  &__button-wrapper {
+
+    button, a {
+      margin: 0 1em 1em 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__circle {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 10px solid var(--primary-color);
+    transform: translate(-50%, -50%);
+
+    &.one {
+      width: 300px;
+      height: 300px;
+      border-bottom: 10px solid transparent;
+      animation: 2s spin ease 0ms forwards;
+    }
+
+    &.two {
+      width: 400px;
+      height: 400px;
+      border-top: 10px solid transparent;
+      animation: 2s spin2 ease 1000ms forwards;
+    }
+
+    &.three {
+      width: 500px;
+      height: 500px;
+      border-bottom: 10px solid transparent;
+      animation: 2s spin3 ease 2000ms forwards;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) rotate(270deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  33% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  66% {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(270deg);
+  }
+}
+
+@keyframes spin3 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  33% {
+    transform: translate(-50%, -50%) rotate(270deg);
+  }
+
+  66% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(450deg);
+  }
+}

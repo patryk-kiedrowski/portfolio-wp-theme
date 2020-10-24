@@ -1,0 +1,22 @@
+[data-theme="dark"] {
+  --primary-color: #006eff;
+  --primary-color-hover: #2885ff;
+  --secondary-color: #ffc400;
+  --heading-color: #f0f0f0;
+  --text-color: #cccccc;
+  --bg-color: #222222;
+  --bg-depth-1:#292929;
+  --bg-depth-2:#383838;
+
+  .icon {
+    filter: brightness(5);
+  }
+
+  .dark-theme {
+    display: block;
+  }
+
+  .light-theme {
+    display: none;
+  }
+}

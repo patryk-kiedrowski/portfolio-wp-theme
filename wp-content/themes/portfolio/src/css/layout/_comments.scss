@@ -1,0 +1,111 @@
+.comments-container {
+
+  .comments {
+    margin-top: 6rem;
+    
+    &__row {
+
+      &--author-data {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      &--message {
+
+      }
+    }
+  
+    &__list {
+      list-style-type: none;
+      padding: 0;
+    }
+  
+    .comment-reply-title {
+      margin-top: 6rem;
+    }
+  }
+
+  .single-comment-container {
+    display: flex;
+  }
+
+  .author-avatar-container {
+    width: 64px;
+    height: 64px;
+    margin-right: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    @media only screen and (max-width: 767.98px) {
+      width: 48px;
+      height: 48px;
+      margin-right: 16px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .author-date {
+    display: flex;
+    flex-direction: column;
+
+    .comment-author-name {
+      order: 1;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .comment-date {
+      order: 0;
+      font-size: 0.7rem;
+      margin-bottom: -0.4rem;
+    }
+  }
+
+  .comment {
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    background: var(--bg-depth-1);
+
+    @media only screen and (max-width: 767.98px) {
+      padding: 1rem;
+    }
+  }
+
+  .comment-form-author {
+    width: calc(50% - 0.5rem);
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+
+    @media only screen and (max-width: 767.98px) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  .comment-form-email {
+    width: calc(50% - 0.5rem);
+    margin-top: 0.5rem;
+
+    @media only screen and (max-width: 767.98px) {
+      width: 100%;
+    }
+  }
+
+  .comment-form-cookies-consent {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .form-submit {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
