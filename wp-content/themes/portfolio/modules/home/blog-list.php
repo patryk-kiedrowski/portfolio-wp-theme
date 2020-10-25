@@ -9,6 +9,7 @@
   <?php while($posts->have_posts()) {
     $posts->the_post();
     $date = get_the_date('d-m-Y');
+    $tags = get_the_tags();
   ?>
 
   <a href="<?php the_permalink(); ?>" class="blog-entry-wrapper">
@@ -22,7 +23,11 @@
       </p>
 
       <ul class="blog-entry__stack-list">
-        <?php the_tags('<li class="tag">', '</li><li class="tag">'); ?>
+        <?php 
+          foreach($tags as $tag) {
+            echo '<li class="blog-entry__stack-item">' . $tag->name . '</li>';
+          } 
+        ?>
       </ul>
     </article>
   </a>
