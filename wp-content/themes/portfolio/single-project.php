@@ -35,8 +35,17 @@
           <h2 class="single-article__small-heading">Zobacz projekt:</h2>
 
           <div class="tag-list">
-            <a href="<?php the_field('live_link'); ?>" target="_blank" class="btn btn--primary btn--small btn--full">Strona</a>
-            <a href="<?php the_field('code_link'); ?>" target="_blank" class="btn btn--primary btn--small btn--outline">Kod</a>
+            <?php if (get_field('live_link')) { ?>
+              <a href="<?php the_field('live_link'); ?>" target="_blank" class="btn btn--primary btn--small btn--full">Strona</a>
+            <?php } else { ?>
+              <a href="" class="btn btn--primary btn--small btn--full" disabled>Strona</a>
+            <?php } ?>
+            
+            <?php if (get_field('code_link')) { ?>
+              <a href="<?php the_field('code_link'); ?>" target="_blank" class="btn btn--primary btn--small btn--outline">Kod</a>
+            <?php } else { ?>
+              <a class="btn btn--primary btn--small btn--outline" disabled>Kod</a>
+            <?php } ?>
           </div>
         </div>
       </div>
