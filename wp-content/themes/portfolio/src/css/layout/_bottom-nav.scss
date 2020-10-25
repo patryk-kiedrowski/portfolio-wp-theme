@@ -9,6 +9,15 @@
     width: 100%;
     background-color: var(--bg-color);
     z-index: 10000;
+    transition: 250ms all ease;
+  }
+
+  &.sticky {
+    transform: translateY(100%);
+  }
+
+  &.visible {
+    transform: translateY(0);
   }
 }
 

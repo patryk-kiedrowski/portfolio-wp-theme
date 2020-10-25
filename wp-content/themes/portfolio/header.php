@@ -17,6 +17,7 @@
   <?php wp_head();?>
 </head>
 <body>
+  <div id="scroll-indicator" class="nav-scroll-indicator"></div>
   <!-- NAV -->
   <nav class="nav-wrapper">
     <div class="nav section">
@@ -44,7 +45,5 @@
         </button>
       </div>
     </div>
-
-    <div id="scroll-indicator" class="nav-scroll-indicator"></div>
   </nav>
   <!-- END: NAV -->

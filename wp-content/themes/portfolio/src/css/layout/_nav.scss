@@ -6,6 +6,14 @@
   width: 100%;
   background: var(--bg-color);
   transition: 250ms all ease;
+
+  &.sticky {
+    transform: translateY(-100%);
+  }
+
+  &.visible {
+    transform: translateY(0);
+  }
 }
 
 .nav {
@@ -53,9 +61,10 @@
 }
 
 .nav-scroll-indicator {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 10001;
   background-color: var(--primary-color);
   height: 4px;
   width: 100%;
