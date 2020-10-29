@@ -1,8 +1,36 @@
 a {
+  position: relative;
   color: inherit;
 
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 250ms all ease;
+  }
+
   &:hover {
-    color: var(--primary-color);
+    color: var(--heading-color);
+    text-decoration: none;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &.btn,
+  &.project-wrapper,
+  &.blog-entry-wrapper {
+
+    &::after {
+      content: none;
+    }
   }
 }
 
@@ -26,6 +54,13 @@ a {
 
   &--small {
     padding: 0.1em 0.8em;
+  }
+
+  a {
+
+    &::after {
+      content: none;
+    }
   }
 }
 

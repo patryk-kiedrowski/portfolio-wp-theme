@@ -6,6 +6,7 @@
   width: 100%;
   background: var(--bg-color);
   transition: 250ms all ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   &.sticky {
     transform: translateY(-100%);
