@@ -50,6 +50,14 @@
       &::after {
         content: '';
       }
+
+      .icon {
+        filter: var(--icon-hover-brightness);
+      }
+
+      .bottom-nav__item-text {
+        color: var(--heading-color);
+      }
     }
 
     &-anchor {
