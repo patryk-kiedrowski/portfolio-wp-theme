@@ -14,19 +14,21 @@ export class AdjustAdminBar {
   }
 
   moveAdminBarIfVisible(): void {
-    const adminBar: HTMLElement = document.getElementById('wpadminbar');
+    const adminBar: HTMLElement = document.querySelector('#wpadminbar');
     const nav: HTMLElement = document.querySelector('.nav-wrapper');
+    const scrollIndicator: HTMLElement = document.querySelector('#scroll-indicator');
 
-    if (adminBar) {
-
-      if (nav) {
-        const windowWidth = window.innerWidth;
-        const offset = windowWidth >= 1200 ? 32 : 46;
-
-        nav.style.marginTop = `${offset}px`;
-        this.prepareCustomVHUnit(offset);
-      }
+    if (!adminBar || !nav || !scrollIndicator) {
+      return;
     }
+
+    const windowWidth = window.innerWidth;
+    const offset = windowWidth >= 1200 ? 32 : 46;
+
+    nav.style.marginTop = `${offset}px`;
+    scrollIndicator.style.marginTop = `${offset}px`;
+
+    this.prepareCustomVHUnit(offset);
   }
 
   prepareCustomVHUnit(offset: number = 0): void {

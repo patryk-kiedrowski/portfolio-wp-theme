@@ -98,11 +98,18 @@
   </div>
 </footer>
 
+<?php 
+  $isProjects = is_post_type_archive('project') || is_singular('project');
+  $isBlog = is_blog() || is_singular('post');
+  $isAbout = is_page('about');
+  $isContact = is_page('contact');
+?>
+
 <!-- BOTTOM NAV -->
 <nav class="bottom-nav-wrapper">
-  <div class="bottom-nav section">
+  <div class="bottom-nav">
     <ul class="bottom-nav__list">
-      <li class="bottom-nav__item">
+      <li class="bottom-nav__item <?php if ($isProjects) echo 'active'; ?>">
         <a href="<?php echo site_url('/projects'); ?>" class="bottom-nav__item-anchor">
           <img class="bottom-nav__item-icon icon" src="<?php echo get_theme_file_uri('/assets/icon/projects.svg'); ?>" alt="">
 
@@ -110,7 +117,7 @@
         </a>
       </li>
 
-      <li class="bottom-nav__item">
+      <li class="bottom-nav__item <?php if ($isBlog) echo 'active'; ?>">
         <a href="<?php echo site_url('/blog'); ?>" class="bottom-nav__item-anchor">
           <img class="bottom-nav__item-icon icon" src="<?php echo get_theme_file_uri('/assets/icon/blog.svg'); ?>" alt="">
 
@@ -118,7 +125,7 @@
         </a>
       </li>
 
-      <li class="bottom-nav__item">
+      <li class="bottom-nav__item <?php if ($isAbout) echo 'active'; ?>">
         <a href="<?php echo site_url('/about'); ?>" class="bottom-nav__item-anchor">
           <img class="bottom-nav__item-icon icon" src="<?php echo get_theme_file_uri('/assets/icon/about.svg'); ?>" alt="">
 
@@ -126,7 +133,7 @@
         </a>
       </li>
 
-      <li class="bottom-nav__item">
+      <li class="bottom-nav__item <?php if ($isContact) echo 'active'; ?>">
         <a href="<?php echo site_url('/contact'); ?>" class="bottom-nav__item-anchor">
           <img class="bottom-nav__item-icon icon" src="<?php echo get_theme_file_uri('/assets/icon/contact.svg'); ?>" alt="">
 

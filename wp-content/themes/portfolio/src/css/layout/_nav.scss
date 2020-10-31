@@ -6,6 +6,15 @@
   width: 100%;
   background: var(--bg-color);
   transition: 250ms all ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  &.sticky {
+    transform: translateY(-100%);
+  }
+
+  &.visible {
+    transform: translateY(0);
+  }
 }
 
 .nav {
@@ -13,6 +22,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
+
+  @media only screen and (max-width: 767.98px) {
+    padding: 0.5rem 0;
+  }
 
   &__logo {
 
@@ -38,6 +51,15 @@
 
   &__link-anchor {
     padding: 0.5rem;
+
+    &.active {
+      color: var(--heading-color);
+      text-decoration: none;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
   }
 
   &__mode-toggle {
@@ -53,9 +75,10 @@
 }
 
 .nav-scroll-indicator {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 10001;
   background-color: var(--primary-color);
   height: 4px;
   width: 100%;
