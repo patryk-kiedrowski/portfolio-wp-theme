@@ -23,6 +23,10 @@
   justify-content: space-between;
   padding: 1rem 0;
 
+  @media only screen and (max-width: 767.98px) {
+    padding: 0.5rem 0;
+  }
+
   &__logo {
 
   }
@@ -47,6 +51,15 @@
 
   &__link-anchor {
     padding: 0.5rem;
+
+    &.active {
+      color: var(--heading-color);
+      text-decoration: none;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
   }
 
   &__mode-toggle {
