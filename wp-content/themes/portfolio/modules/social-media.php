@@ -1,13 +1,17 @@
+<?php 
+  $links = new WP_Query(array(
+    'post_type' => 'social-media'
+  ));
+?>
+
 <div class="socials-wrapper">
-  <a class="social" href="#" target="_blank">
-    <img class="social__logo icon" src="<?php echo get_theme_file_uri('/assets/icon/facebook.svg'); ?>" alt="Facebook">
+  <?php while($links->have_posts()) {
+    $links->the_post();
+  ?>
+
+  <a class="social" href="<?php the_field('link'); ?>" target="_blank" rel="noopener nofollow">
+    <img class="social__logo icon" src="<?php the_field('light_icon'); ?>" alt="<?php the_field('alt_text'); ?>">
   </a>
 
-  <a class="social" href="#" target="_blank">
-    <img class="social__logo icon" src="<?php echo get_theme_file_uri('/assets/icon/linkedin.svg'); ?>" alt="Linkedin">
-  </a>
-
-  <a class="social" href="#" target="_blank">
-    <img class="social__logo icon" src="<?php echo get_theme_file_uri('/assets/icon/github.svg'); ?>" alt="Github">
-  </a>
+  <?php } wp_reset_postdata(); ?>
 </div>
