@@ -1,10 +1,9 @@
 <?php
 
 require('custom-fields.php');
+require('ext/class-remove-actions.php');
 
 function css_and_scripts() {
-  //ładowanie CSS
-  
   wp_enqueue_style(
     'wp-style-file',
     get_template_directory_uri().'/style.css'
@@ -23,7 +22,7 @@ function css_and_scripts() {
   
   //ładowanie skryptów
   wp_enqueue_script(
-    'main-script', 
+    'main-script-defer', 
     get_template_directory_uri().'/dist/bundle.js', 
     'main',
     false,
@@ -34,6 +33,50 @@ function css_and_scripts() {
     'dark-mode',
     get_template_directory_uri().'/dark-mode.js'
   );
+}
+
+
+function change_default_jquery( ){
+  wp_dequeue_script( 'jquery');
+  wp_deregister_script( 'jquery');   
+}
+
+add_filter( 'wp_enqueue_scripts', 'change_default_jquery', PHP_INT_MAX );
+
+function smartwp_remove_wp_block_library_css(){
+  wp_dequeue_style( 'wp-block-library' );
+  wp_dequeue_style( 'wp-block-library-theme' );
+  wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
+} 
+
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+
+/**
+* Add async or defer attributes to script enqueues
+* @author Mike Kormendy
+* @param  String  $tag     The original enqueued <script src="...> tag
+* @param  String  $handle  The registered unique name of the script
+* @return String  $tag     The modified <script async|defer src="...> tag
+*/
+// only on the front-end
+if(!is_admin()) {
+  function add_asyncdefer_attribute($tag, $handle) {
+      // if the unique handle/name of the registered script has 'async' in it
+      if (strpos($handle, 'async') !== false) {
+          // return the tag with the async attribute
+          return str_replace( '<script ', '<script async ', $tag );
+      }
+      // if the unique handle/name of the registered script has 'defer' in it
+      else if (strpos($handle, 'defer') !== false) {
+          // return the tag with the defer attribute
+          return str_replace( '<script ', '<script defer ', $tag );
+      }
+      // otherwise skip
+      else {
+          return $tag;
+      }
+  }
+  add_filter('script_loader_tag', 'add_asyncdefer_attribute', 10, 2);
 }
 
 function custom_comments($comment, $args, $depth) {
