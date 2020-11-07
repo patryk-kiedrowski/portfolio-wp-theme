@@ -131,14 +131,12 @@
     }
 
     figcaption {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      width: 80%;
+      padding: 0 1em;
+      margin-top: -3rem;
       text-align: center;
       font-size: 0.8rem;
-      transform: translateX(-50%);
       font-style: italic;
+      line-height: 1.5;
     }
 
     ul, ol {
