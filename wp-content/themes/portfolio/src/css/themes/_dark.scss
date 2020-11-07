@@ -7,7 +7,7 @@
   --bg-color: #222222;
   --bg-depth-1:#292929;
   --bg-depth-2:#383838;
-  --icon-hover-brightness: brightness(8);
+  --bottom-icon-brightness: brightness(8);
 
   .icon {
     filter: brightness(5);
@@ -19,5 +19,12 @@
 
   .light-theme {
     display: none;
+  }
+
+  .bottom-nav {
+
+    .icon {
+      filter: brightness(2);
+    }
   }
 }
