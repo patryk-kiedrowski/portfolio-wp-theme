@@ -35,6 +35,7 @@ function css_and_scripts() {
   );
 }
 
+add_action('wp_enqueue_scripts', 'css_and_scripts');
 
 function change_default_jquery( ){
   wp_dequeue_script( 'jquery');
@@ -61,20 +62,20 @@ add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 // only on the front-end
 if(!is_admin()) {
   function add_asyncdefer_attribute($tag, $handle) {
-      // if the unique handle/name of the registered script has 'async' in it
-      if (strpos($handle, 'async') !== false) {
-          // return the tag with the async attribute
-          return str_replace( '<script ', '<script async ', $tag );
-      }
-      // if the unique handle/name of the registered script has 'defer' in it
-      else if (strpos($handle, 'defer') !== false) {
-          // return the tag with the defer attribute
-          return str_replace( '<script ', '<script defer ', $tag );
-      }
-      // otherwise skip
-      else {
-          return $tag;
-      }
+    // if the unique handle/name of the registered script has 'async' in it
+    if (strpos($handle, 'async') !== false) {
+        // return the tag with the async attribute
+        return str_replace( '<script ', '<script async ', $tag );
+    }
+    // if the unique handle/name of the registered script has 'defer' in it
+    else if (strpos($handle, 'defer') !== false) {
+        // return the tag with the defer attribute
+        return str_replace( '<script ', '<script defer ', $tag );
+    }
+    // otherwise skip
+    else {
+        return $tag;
+    }
   }
   add_filter('script_loader_tag', 'add_asyncdefer_attribute', 10, 2);
 }
@@ -116,6 +117,23 @@ function custom_comments($comment, $args, $depth) {
   <?php    
 }
 
+function auto_id_headings( $content ) {
+
+	$content = preg_replace_callback( '/(\<h[1-6](.*?))\>(.*)(<\/h[1-6]>)/i', function( $matches ) {
+		if ( ! stripos( $matches[0], 'id=' ) ) :
+			$heading_link = '<a href="#' . sanitize_title( $matches[3] ) . '" class="heading-link"><img class="icon" src="' . get_theme_file_uri('/assets/icon/link.svg') . '" alt=""></a>';
+			$matches[0] = $matches[1] . $matches[2] . ' id="' . sanitize_title( $matches[3] ) . '">' . $matches[3] . $heading_link . $matches[4];
+		endif;
+
+		return $matches[0];
+	}, $content );
+
+    return $content;
+
+}
+
+add_filter( 'the_content', 'auto_id_headings' );
+
 register_nav_menus(array(
 'top-nav' => 'Gorne menu strony'
 ));
@@ -131,5 +149,4 @@ add_theme_support('post-thumbnails');
 
 add_theme_support('html5', array('comment-list', 'comment-form', 'search-form'));
 
-add_action('wp_enqueue_scripts', 'css_and_scripts');
 ?>
