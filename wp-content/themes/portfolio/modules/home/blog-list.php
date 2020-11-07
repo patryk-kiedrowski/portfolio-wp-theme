@@ -12,7 +12,7 @@
     $tags = get_the_tags();
   ?>
 
-  <a href="<?php the_permalink(); ?>" class="blog-entry-wrapper">
+  <a href="<?php the_permalink(); ?>" class="blog-entry-wrapper" aria-label="<?php the_title(); ?>">
     <article class="blog-entry bg-z-1">
       <time datetime="<?php echo $date; ?>" class="blog-entry__category"><?php echo $date; ?></time>
 

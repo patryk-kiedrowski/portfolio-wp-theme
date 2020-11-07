@@ -14,7 +14,7 @@
     $projects->the_post();
   ?>
 
-  <a href="<?php the_permalink(); ?>" class="project-wrapper">
+  <a href="<?php the_permalink(); ?>" class="project-wrapper" aria-label="<?php the_title(); ?>">
     <article class="project bg-z-0">
       <p class="project__category"><?php the_field('category'); ?></p>
 
