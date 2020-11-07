@@ -19,7 +19,10 @@
 
       h1,h2,h3,h4,h5,h6 {
         color: var(--primary-color);
-        text-decoration: underline;
+      }
+
+      .blog-entry {
+        border-color: var(--primary-color);
       }
     }
   }
@@ -28,6 +31,7 @@
     padding: 3rem;
     border-radius: 1rem;
     margin-bottom: 3rem;
+    border: 2px solid transparent;
 
     @media only screen and (max-width: 767.98px) {
       padding: 1rem 1.5rem
