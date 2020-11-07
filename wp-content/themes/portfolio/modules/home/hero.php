@@ -25,4 +25,8 @@
       <div class="hero__circle three"></div>
     </div>
   </div>
+
+  <div id="pattern-wrapper" class="pattern-wrapper">
+    <div class="pattern-container"></div>
+  </div>
 </section>
