@@ -15,8 +15,8 @@
       </div>
 
       <div class="btn-container">
-        <a href="#" class="btn btn--primary btn--full">Strona główna</a>
-        <a href="#" class="btn btn--primary btn--outline">Blog</a>
+        <a href="<?php echo site_url('/'); ?>" class="btn btn--primary btn--full">Strona główna</a>
+        <a href="<?php echo site_url('/blog'); ?>" class="btn btn--primary btn--outline">Blog</a>
       </div>
     </div>
   </section>
