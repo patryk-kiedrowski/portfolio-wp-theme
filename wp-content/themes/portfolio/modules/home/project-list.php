@@ -3,8 +3,10 @@
     'posts_per_page' => 3,
     'post_type' => 'project',
     'meta_query' => [
-      'key'     => 'featured',
-      'value'   => true,
+      [
+        'key'     => 'featured',
+        'value'   => 1,
+      ]
     ],
   ));
 ?>
