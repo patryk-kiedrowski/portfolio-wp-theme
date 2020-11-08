@@ -2,7 +2,8 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: calc(100vh - 60px);
+  margin-top: 60px;
   overflow: hidden;
 
   .pattern-wrapper {

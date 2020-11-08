@@ -237,20 +237,12 @@
       position: relative;
       padding: 0.2em 0.4em;
       font-size: inherit;
-      white-space: nowrap;
-
-      &::before {
-        position: absolute;
-        content: '';
-        top: 0;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        border-radius: 5px;
-        opacity: 0.2;
-        background: var(--primary-color);
-      }
+      word-break: break-all;
+      background-image: linear-gradient(to bottom, #C0D6F3 0%, #C0D6F3 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: 0 100%;
+      border-radius: 5px;
     }
 
     pre {
