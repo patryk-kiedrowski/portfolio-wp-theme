@@ -35,7 +35,7 @@ a {
   }
 }
 
-.tag:not(pre > *) {
+.tag:not(.token) {
   display: inline-block;
   margin: 0 1em 1em 0;
   background-color: var(--primary-color);
