@@ -1,7 +1,8 @@
 <?php 
   $posts = new WP_Query(array(
     'posts_per_page' => 3,
-    'post_type' => 'post'
+    'post_type' => 'post',
+    'post_status' => 'publish',
   ));
 ?>
 

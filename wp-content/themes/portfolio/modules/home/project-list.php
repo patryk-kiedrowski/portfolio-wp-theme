@@ -2,6 +2,7 @@
   $projects = new WP_Query(array(
     'posts_per_page' => 3,
     'post_type' => 'project',
+    'post_status' => 'publish',
     'meta_query' => [
       [
         'key'     => 'featured',
