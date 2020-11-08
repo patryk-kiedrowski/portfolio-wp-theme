@@ -32,7 +32,15 @@
   ?>
   <nav class="nav-wrapper">
     <div class="nav section">
-      <a href="<?php echo site_url('/'); ?>" class="nav__logo">kiedrowski.dev</a>
+      <a href="<?php echo site_url('/'); ?>" class="nav__logo logo-wrapper">
+        <div class="logo">
+          <div class="logo__piece logo__piece--tr"></div>
+          <div class="logo__piece logo__piece--br"></div>
+          <div class="logo__piece logo__piece--tl"></div>
+          <div class="logo__piece logo__piece--bl"></div>
+        </div>
+        <span>kiedrowski.dev</span>
+      </a>
 
       <div class="nav__link-wrapper">
         <ul class="nav__link-list">

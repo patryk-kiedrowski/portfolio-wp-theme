@@ -19,7 +19,10 @@
 
       h1,h2,h3,h4,h5,h6 {
         color: var(--primary-color);
-        text-decoration: underline;
+      }
+
+      .blog-entry {
+        border-color: var(--primary-color);
       }
     }
   }
@@ -28,6 +31,7 @@
     padding: 3rem;
     border-radius: 1rem;
     margin-bottom: 3rem;
+    border: 2px solid transparent;
 
     @media only screen and (max-width: 767.98px) {
       padding: 1rem 1.5rem
@@ -36,14 +40,22 @@
     &__category {
       margin-bottom: 0.25rem;
       font-size: 0.75rem;
+      color: var(--text-color);
+      transition: 250ms all ease;
     }
 
     &__title {
-
+      margin-bottom: 0.5em;
     }
 
     &__excerpt {
       max-width: 80%;
+      color: var(--text-color);
+      transition: 250ms all ease;
+
+      @media only screen and (max-width: 767.98px) {
+        max-width: none;
+      }
     }
 
     &__stack-list {
@@ -58,6 +70,12 @@
       color: white;
       padding: 0.2em 1em;
       border-radius: 5px;
+
+      @media only screen and (max-width: 767.98px) {
+        margin: 0 0.5rem 0.5rem 0;
+        padding: 0 0.5em;
+        font-size: 0.9rem;
+      }
 
       &:last-child {
         margin-right: 0;

@@ -50,6 +50,15 @@
       &::after {
         content: '';
       }
+
+      .bottom-nav__item-icon.icon {
+        filter: var(--bottom-icon-brightness);
+      }
+
+      .bottom-nav__item-text {
+        font-weight: 600;
+        color: var(--heading-color);
+      }
     }
 
     &-anchor {
@@ -69,7 +78,7 @@
       &:hover {
 
         .icon {
-          filter: var(--icon-hover-brightness);
+          filter: var(--bottom-icon-brightness);
         }
       }
     }

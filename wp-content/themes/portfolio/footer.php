@@ -2,18 +2,24 @@
   $projects = new WP_Query(array(
     'posts_per_page' => 3,
     'post_type' => 'project',
+    'post_status' => 'publish',
     'meta_query' => [
-      'key'     => 'featured',
-      'value'   => true,
+      [
+        'key'     => 'featured',
+        'value'   => 1,
+      ]
     ],
   ));
 
   $posts = new WP_Query(array(
     'posts_per_page' => 3,
     'post_type' => 'post',
+    'post_status' => 'publish',
     'meta_query' => [
-      'key'     => 'featured',
-      'value'   => true,
+      [
+        'key'     => 'featured',
+        'value'   => 1,
+      ]
     ],
   ));
 ?>
@@ -22,7 +28,15 @@
   <div class="footer section">
     <div class="footer__row">
       <div class="footer__column footer__column--logo">
-        <h2 class="footer__column-heading">kiedrowski.dev</h2>
+        <a href="<?php echo site_url('/'); ?>" class="nav__logo logo-wrapper">
+          <div class="logo">
+            <div class="logo__piece logo__piece--tr"></div>
+            <div class="logo__piece logo__piece--br"></div>
+            <div class="logo__piece logo__piece--tl"></div>
+            <div class="logo__piece logo__piece--bl"></div>
+          </div>
+          <span>kiedrowski.dev</span>
+        </a>
       </div>
 
       <div class="footer__column">

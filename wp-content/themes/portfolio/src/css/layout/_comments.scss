@@ -2,6 +2,10 @@
 
   .comments {
     margin-top: 6rem;
+
+    @media only screen and (max-width: 767.98px) {
+      margin-top: 3rem;
+    }
     
     &__row {
 
@@ -22,6 +26,10 @@
   
     .comment-reply-title {
       margin-top: 6rem;
+
+      @media only screen and (max-width: 767.98px) {
+        margin-top: 3rem;
+      }
     }
   }
 
@@ -38,6 +46,7 @@
     overflow: hidden;
 
     @media only screen and (max-width: 767.98px) {
+      position: absolute;
       width: 48px;
       height: 48px;
       margin-right: 16px;
@@ -52,6 +61,10 @@
   .author-date {
     display: flex;
     flex-direction: column;
+
+    @media only screen and (max-width: 767.98px) {
+      margin-left: 64px;
+    }
 
     .comment-author-name {
       order: 1;

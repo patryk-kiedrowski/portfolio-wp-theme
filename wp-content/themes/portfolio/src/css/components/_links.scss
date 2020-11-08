@@ -1,6 +1,7 @@
 a {
   position: relative;
-  color: inherit;
+  color: var(--text-color);
+  transition: 250ms all ease;
 
   &::after {
     position: absolute;
@@ -34,13 +35,19 @@ a {
   }
 }
 
-.tag {
+.tag:not(.token) {
   display: inline-block;
   margin: 0 1em 1em 0;
   background-color: var(--primary-color);
   color: white;
   padding: 0.2em 1em;
   border-radius: 5px;
+
+  @media only screen and (max-width: 767.98px) {
+    margin: 0 0.5rem 0.5rem 0;
+    padding: 0 0.5em;
+    font-size: 0.9rem;
+  }
 
   &:hover {
     color: white;
@@ -54,6 +61,12 @@ a {
 
   &--small {
     padding: 0.1em 0.8em;
+
+    @media only screen and (max-width: 767.98px) {
+      margin: 0 0.5rem 0.5rem 0;
+      padding: 0 0.5em;
+      font-size: 0.9rem;
+    }
   }
 
   a {
@@ -71,6 +84,10 @@ a {
 
   & > * {
     margin: 0 1em 1em 0;
+
+    @media only screen and (max-width: 767.98px) {
+      margin: 0 0.5rem 0.5rem 0;
+    }
 
     &:last-child {
       margin-right: 0;

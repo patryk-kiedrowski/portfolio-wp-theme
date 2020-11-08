@@ -1,13 +1,13 @@
 [data-theme="dark"] {
-  --primary-color: #006eff;
-  --primary-color-hover: #2885ff;
+  --primary-color: #006efe;
+  --primary-color-hover: #2885fe;
   --secondary-color: #ffc400;
   --heading-color: #f0f0f0;
   --text-color: #cccccc;
   --bg-color: #222222;
   --bg-depth-1:#292929;
   --bg-depth-2:#383838;
-  --icon-hover-brightness: brightness(8);
+  --bottom-icon-brightness: brightness(8);
 
   .icon {
     filter: brightness(5);
@@ -19,5 +19,12 @@
 
   .light-theme {
     display: none;
+  }
+
+  .bottom-nav {
+
+    .icon {
+      filter: brightness(2);
+    }
   }
 }

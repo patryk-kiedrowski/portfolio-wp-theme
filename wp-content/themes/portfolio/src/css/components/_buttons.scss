@@ -1,9 +1,19 @@
 .btn-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 
   &--center {
     justify-content: center;
+  }
+
+  > * {
+    margin-right: 1em;
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 }
 

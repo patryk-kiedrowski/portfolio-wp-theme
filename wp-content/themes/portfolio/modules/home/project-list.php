@@ -2,9 +2,12 @@
   $projects = new WP_Query(array(
     'posts_per_page' => 3,
     'post_type' => 'project',
+    'post_status' => 'publish',
     'meta_query' => [
-      'key'     => 'featured',
-      'value'   => true,
+      [
+        'key'     => 'featured',
+        'value'   => 1,
+      ]
     ],
   ));
 ?>
@@ -14,7 +17,7 @@
     $projects->the_post();
   ?>
 
-  <a href="<?php the_permalink(); ?>" class="project-wrapper">
+  <a href="<?php the_permalink(); ?>" class="project-wrapper" aria-label="<?php the_title(); ?>">
     <article class="project bg-z-0">
       <p class="project__category"><?php the_field('category'); ?></p>
 

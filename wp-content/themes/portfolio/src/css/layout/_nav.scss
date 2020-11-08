@@ -28,7 +28,7 @@
   }
 
   &__logo {
-
+    
   }
 
   &__link-wrapper {
@@ -65,6 +65,7 @@
   &__mode-toggle {
     display: flex;
     padding: 10px;
+    margin-right: -10px;
     cursor: pointer;
 
     img {
@@ -85,4 +86,67 @@
   transform: scaleX(0);
   transform-origin: left;
   transition: 50ms transform ease;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+
+  &::after {
+    content: none;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+  
+  .logo {
+    position: relative;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-right: 1.5rem;
+
+    @media only screen and (max-width: 767.98px) {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1.25rem;
+    }
+
+    &__piece {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      background: var(--primary-color);
+
+      &--tr {
+        top: 0;
+        right: 0;
+        transform: skew(-45deg);
+        opacity: 0.75;
+      }
+
+      &--br {
+        bottom: 0;
+        right: 0;
+        transform: skew(45deg);
+        opacity: 0.75;
+      }
+
+      &--tl {
+        top: 0;
+        left: 0;
+        transform: skew(45deg);
+        opacity: 0.3;
+      }
+
+      &--bl {
+        bottom: 0;
+        left: 0;
+        transform: skew(45deg);
+        opacity: 0.3;
+      }
+    }
+  }
 }
