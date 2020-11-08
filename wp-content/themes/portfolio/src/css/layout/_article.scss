@@ -261,6 +261,10 @@
         text-decoration: none;
         background-size: 100% 100%;
       }
+
+      &::after {
+        content: none;
+      }
     }
 
     .heading-link {

@@ -9,7 +9,7 @@
 
       <div id="content" class="wysiwyg">
         <p>
-          Strona, której szukasz, nie istnieje.
+          Strona, której szukasz, nie istnieje. Wróć na stronę główną, albo poczytaj moje wpisy na blogu :)
         </p>
         <p>&nbsp;</p>
       </div>
