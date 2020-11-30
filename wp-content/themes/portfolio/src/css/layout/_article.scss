@@ -103,6 +103,13 @@
     margin-bottom: 3rem;
   }
 
+  &__list {
+
+    &.tag-list {
+      padding-left: 0;
+    }
+  }
+
   &__excerpt {
     font-weight: 600;
     margin-bottom: 3rem;
@@ -237,6 +244,7 @@
       position: relative;
       padding: 0.2em 0.4em;
       font-size: inherit;
+      color: #292929;
       word-break: break-word;
       background-image: linear-gradient(to bottom, #C0D6F3 0%, #C0D6F3 100%);
       background-repeat: no-repeat;

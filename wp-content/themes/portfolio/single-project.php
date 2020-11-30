@@ -24,11 +24,11 @@
       <div class="single-article__row single-article__row--margin">
         <div class="single-article__column single-article__column--grow">
           <h2 class="single-article__small-heading">Użyte technologie:</h2>
-          <div class="tag-list">
+          <ul class="tag-list single-article__list">
             <?php foreach(get_field('technologies') as $tech): setup_postdata($post); ?>
-              <button class="tag tag--small"><?php echo $tech->post_title; ?></button>
+              <li class="tag tag--small"><?php echo $tech->post_title; ?></li>
             <?php endforeach; ?>
-          </div>
+          </ul>
         </div>
 
         <div class="single-article__column single-article__column--auto">

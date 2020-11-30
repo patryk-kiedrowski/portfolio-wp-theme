@@ -5,3 +5,7 @@ Author URI: https://kiedrowski.dev
 Description: Portfolio
 Version: 1.0
 */
+
+.grecaptcha-badge {
+  visibility: hidden; 
+}

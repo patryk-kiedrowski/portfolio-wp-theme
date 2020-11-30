@@ -160,5 +160,15 @@
 <!-- END: BOTTOM NAV -->
 
 <?php wp_footer(); ?> 
+
+<script defer src="https://www.googletagmanager.com/gtag/js?id=UA-117313790-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117313790-1');
+</script>
+
 </body>
 </html>
